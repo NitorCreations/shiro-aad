@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.nitorcreations</groupId>
   <artifactId>shiro-aad</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>jar</packaging>
   <name>Shiro Authorizing Realm for Azure AD</name>
   <description>Shiro realm implementation for authenticating users against Azure AD and authorization with groups and roles from the Graph API.</description>
@@ -144,7 +144,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.5</version>
+            <version>1.6</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
