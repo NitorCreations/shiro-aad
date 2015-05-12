@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.nitorcreations</groupId>
   <artifactId>shiro-aad</artifactId>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
   <name>Shiro Authorizing Realm for Azure AD</name>
   <description>Shiro realm implementation for authenticating users against Azure AD and authorization with groups and roles from the Graph API.</description>
@@ -40,7 +40,7 @@
     <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>adal4j</artifactId>
-      <version>0.0.3</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>

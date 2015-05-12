@@ -112,7 +112,7 @@ public class AADRealm extends AuthorizingRealm {
     String username = usernamePasswordToken.getUsername();
     char[] password = usernamePasswordToken.getPassword();
     try {
-      this.authenticationContext.acquireToken(this.config.getGraphResource(), this.config.getAuthenticationClientId(), username + '@' + this.config.getTenant(), new String(password), null).get();
+      this.authenticationContext.acquireToken(this.config.getGraphResource(), this.config.getAuthenticationClientId(), username + '@' + this.config.getTenant(), escape(new String(password)), null).get();
     } catch (InterruptedException | ExecutionException e) {
       if (e.getCause() instanceof com.microsoft.aad.adal4j.AuthenticationException) {
         // Invalid username or password
@@ -159,5 +159,9 @@ public class AADRealm extends AuthorizingRealm {
     }
     IdsResponse idsResponse = this.gson.fromJson(responseBody, IdsResponse.class);
     return idsResponse.getIds();
+  }
+
+  private String escape(String text) {
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
   }
 }
